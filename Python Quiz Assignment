@@ -1,0 +1,320 @@
+import math 
+bold = "\033[1m"
+reset = "\033[0m"
+italic = "\033[3m"
+score = 0 
+
+#Introduce user to quiz and create two lists to store answers
+print(f"{bold}Quiz #1: Basic Understanding of Calculus{reset} \nThis quiz will be 10 questions in length.")
+
+correct_answers = []
+incorrect_answers = []
+
+#Get user 
+user_profile = input("\n\nStudent Name: ")
+
+#Create question 1 and set an answer
+print(f"\n\n{bold}Question 1:{reset}")
+question_1 = int(input(f"\nWhat is the result of 2 to the power of 3 (2^3)?\n{italic}Enter as an integer:{reset} "))
+
+answer_1 = math.pow(2,3)
+absolute_answer_1 = 8
+
+#Create conditionals for user input
+if question_1 == answer_1:
+      print("\nYou are correct!")
+      score+=10
+      correct_answers.append(question_1)
+else:
+  print(f"\nIncorrect answer. 2^3 is equal to {absolute_answer_1} not '{question_1}'.")
+  incorrect_answers.append(question_1)
+
+#Create question 2
+question_2 = input(f"""\n\n{bold}Question 2:{reset}
+
+Which is the correct answer of factoring the following trinomial: x^2 + 5x + 6
+
+Choose one of the following answers:
+
+{bold}A.){reset}\t(x+2)(x+3)
+
+{bold}B.){reset}\t(x+2)(x+5)
+
+{bold}C.){reset}\t2(x+3)(x+2)
+
+{italic}Answer:{reset} """)
+
+question_2 = question_2.strip()
+
+answer_2 = ['A','a','(x+2)(x+3)', 'A.', 'a.']
+
+#Conditionals for question 2 
+if question_2 in answer_2:
+  print("\nYou are correct!")
+  correct_answers.append(question_2)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_2[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_2)
+
+#Create question 3
+question_3 = input(f"""\n\n{bold}Question 3:{reset}
+
+Who is known as the 'father' of calculus?") 
+
+{bold}A.){reset}\tNeils Bohr
+
+{bold}B.){reset}\tErnest Rutherford
+
+{bold}C.){reset}\tGottfried Wilhelm Leibniz
+
+{italic}Answer:{reset} """)
+
+question_3 = question_3.strip()
+
+answer_3 = ['C', 'c', 'Gottfried Wilhelm Leibniz', 'gottfried wilhelm leibniz','Leibniz', 'leibniz', 'LEIBNIZ', ]
+
+#Conditionals for question 3
+if question_3 in answer_3:
+  print("\nYou are correct!")
+  correct_answers.append(question_3)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_3[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_3)
+  
+#Create question 4
+question_4 = input(f"""\n\n{bold}Question 4:{reset}
+
+We get the {italic}slope{reset} of a function by getting the _____ derivative.
+
+Fill in the blank: """)
+
+question_4 = question_4.strip()
+
+answer_4 = ['first', 'First', '1st', 'FIRST']
+
+#Conditionals for question 4
+if question_4 in answer_4:
+  print("\nYou are correct!")
+  correct_answers.append(question_4)
+  score+=10
+if question_4 == 'initial':
+  print(f"\nNot quite {answer_4[0]} would be the more correct answer.")
+elif question_4 not in answer_4:
+  print(f"\nIncorrect answer. {italic}'{answer_4[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_4)
+
+#Create question 5
+question_5 = input(f"""\n\n{bold}Question 5:{reset}
+
+Get the first derivative of the function:
+
+\t{bold}f(x) = 5x^3 - 3x^2 + x - 400{reset}
+
+{bold}A.){reset}\t45x^5+3x-22
+
+{bold}B.){reset}\t15x^2 - 6x + 1
+
+{bold}C.){reset}\tNo answer.
+
+{bold}D.){reset}\t1 - 6x + 15x^2
+
+{bold}E.){reset}\tBoth 'B' and 'D'
+
+{italic}Answer:{reset} """)
+
+question_5 = question_5.strip()
+
+answer_5 = ['E', 'e', "both 'B' and 'D'", 'Both B and D', 'both b and d', "both 'b' and 'd", 'E.', 'e.']
+
+#Conditionals for question 5
+if question_5 in answer_5:
+  print("\nYou are correct!")
+  score+=10
+  correct_answers.append(question_5)
+else:
+  print(f"\nIncorrect answer. {italic}{answer_5[0]}{reset} would be the correct answer.")
+  incorrect_answers.append(question_5)
+
+#Create question 6
+question_6 = input(f"""\n\n{bold}Question 6:{reset}
+
+What rule do we apply to get the result of:\t5-4(3)^2
+
+{bold}A.){reset}\tBEDMAS
+
+{bold}B.){reset}\tChain Rule
+
+{bold}C.){reset}\tAnti-Derivative Rule
+
+{italic}Answer:{reset} """)
+
+question_6 = question_6.strip()
+
+answer_6 = ['A', 'a', 'BEDMAS', 'bedmas', 'A.', 'a.', 'BEDMAS.', 'bedmas.']
+
+#Conditionals for question 6
+if question_6 in answer_6:
+  print("\nYou are correct!")
+  correct_answers.append(question_6)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_6[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_6)
+
+#Create question 7
+question_7 = int(input(f"""\n\n{bold}Question 7:{reset}
+
+Find {italic}f(1){reset} if
+
+\t{bold}f(x) = x + 3 + 5x{reset}
+
+{italic}Enter your number as an integer:{reset} """))
+
+answer_7 = 9
+
+#Conditionals for question 7
+if question_7 == answer_7:
+  print("\nYou are correct!")
+  correct_answers.append(question_7)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_7}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_7)
+
+#Create question 8 
+question_8 = input(f"""\n\n{bold}Question 8:{reset}
+
+What would the area be of a rectangle with a {italic}length{reset} of {bold}5cm{reset} and a {italic}width{reset} of {bold}3cm{reset}?
+
+{bold}A.){reset}\t22cm^2
+
+{bold}B.){reset}\t15cm^2
+
+{bold}C.){reset}\t14cm^2
+
+{italic}Answer:{reset} """)
+
+question_8 = question_8.strip()
+
+answer_8 = ['B', 'b', '15cm^2', '15 cm^2', 'B.', 'b.', '15cm^2.', '15 cm^2.']
+
+#Conditionals for question 8
+if question_8 in answer_8:
+  print("\nYou are correct!")
+  correct_answers.append(question_8)
+  score+=10
+elif question_8 == '15':
+  print("\nIncorrect. Forgetting unit of measurement.")
+  incorrect_answers.append(question_8)
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_8[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_8)
+
+#Create question 9 
+question_9 = input(f"""\n\n{bold}Question 9:{reset}
+
+{italic}Fill in the blank.{reset}
+
+The formula for area of a rectangle is ______ multiplied by width.
+
+{italic}Fill in the blank:{reset} """)
+
+question_9 = question_9.strip()
+
+answer_9 = ['length', 'Length', 'LENGTH', 'l', 'length.', 'Length.', 'LENGTH.' ]
+
+#Conditionals for question 9 
+if question_9 in answer_9:
+  print("\nYou are correct!")
+  correct_answers.append(question_9)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_9[0]}'{reset} would be the correct answer.")
+  incorrect_answers.append(question_9)
+
+#Question 10 
+question_10 = input(f"""\n\n{bold}Question 10:{reset}
+
+{italic}Expand.{reset}
+
+(x-2)^2
+
+{bold}A.){reset}\t2x - 4x - 4
+
+{bold}B.){reset}\tx^2 - 4x + 4
+
+{bold}C.){reset}\tUnfactorable.
+
+{italic}Answer:{reset} """)
+
+question_10 = question_10.strip()
+
+answer_10 = ['B', 'b', 'x^2 - 4x + 4', 'x^2-4x+4', 'B.', 'b.']
+
+#Conditionals for question 10 
+if question_10 in answer_10:
+  print("\nYou are correct!")
+  correct_answers.append(question_10)
+  score+=10
+else:
+  print(f"\nIncorrect answer. {italic}'{answer_10[0]}'{reset} would be the correct answer.")
+
+#Ask user if would like to view results
+user_feedback = input("\n\nWould you like to view a summary of your correct and incorrect answers? ")
+
+#Make input usable for feedback
+user_feedback = user_feedback.strip()
+
+feedback = ['Yes', 'yes', 'Y', 'sure', 'Sure', 'yes.', 'YES.', 'YES', 'yes.']
+
+#Create 2 variables for length of correct and incorrect answers 
+length_correct = len(correct_answers)
+length_incorrect = len(incorrect_answers)
+
+if user_feedback in feedback:
+  print(f"""\n\nQuestions correct: {bold}{correct_answers}{reset}
+  
+Questions incorrect: {bold}{incorrect_answers}{reset}""")
+
+  #Create 2 variables for length of correct and incorrect answers 
+  length_correct = len(correct_answers)
+  length_incorrect = len(incorrect_answers)
+
+  if length_correct >= 0 and length_correct >= 7:
+    print(f"""\n\nWell Done! You got {italic}{length_correct}{reset} questions right,  and {italic}{length_incorrect}{reset} questions incorrect.
+    
+Earning you a score of {bold}{score}%{reset}""")
+  if length_correct >= 0 and length_correct >= 8:
+    print(f"""\n\nExceptional job! You got {italic}{length_correct}{reset} questions right, and {italic}{length_incorrect}{reset} questions incorrect.
+    
+Earning you a score of {bold}{score}%{reset}""")
+
+  if length_correct >= 5 and length_correct <= 6:
+    print(f"""\n\n{italic}You passed.{reset} You got {italic}{length_correct}{reset} questions right, and {italic}{length_incorrect}{reset} questions incorrect.
+    
+Earning you a score of {bold}{score}%{reset} """)
+
+  if length_correct >= 0 and length_correct <= 4:
+    print(f"""\n\n{bold}Failure.{reset} You got {italic}{length_correct}{reset} questions right, and {italic}{length_incorrect}{reset} questions incorrect.
+    
+Earning you a score of {bold}{score}%{reset} """)
+
+#If user does not gice expected input
+elif user_feedback not in feedback:
+  print(f"\n\n\nYou got {bold}{length_correct}{reset} questions correct.")
+  if length_correct >= 0 and length_correct >= 7:
+    print(f"""\nWell Done! You got a score of {bold}{score}%{reset}""")
+  if length_correct >= 0 and length_correct >= 8:
+    print(f"""\nExceptional job! You got a score of {bold}{score}%{reset}""")
+  if length_correct >= 5 and length_correct <= 6:
+    print(f"""\n{italic}You passed with a score of {bold}{score}%{reset} """)
+  if length_correct >= 0 and length_correct <= 4:
+    print(f"""\n{bold}Failure. Score of {bold}{score}%{reset}""")
+    
+#End of quiz 
+out_of_100 = (f"{score/10}/10")
+print(f"""\n\n{italic}Name:{reset} {user_profile.title()}   {italic}Grade: {reset}{out_of_100}
+
+{bold}{italic}Quiz complete.{reset}""")
